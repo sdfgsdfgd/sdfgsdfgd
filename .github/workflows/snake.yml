@@ -1,17 +1,16 @@
-name: Generate da Snake
+name: Generate Snake
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
 
 permissions:
   contents: write
-  
-on:
-  schedule: 
-    - cron: "0 0 * * *"  # run once a day every day forever and ever 
-  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
 
@@ -24,11 +23,18 @@ jobs:
             dist/github-snake-dark.svg?palette=github-dark
             dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
 
-      - name: Push Snake
+      # Instead of passing commit_message & follow_symbolic_links to the push action,
+      # do the commit in a separate step:
+      - name: Commit changes
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add -A
+          git commit -m "chore: Snake animation update" || echo "No changes to commit"
+
+      - name: Push changes
         uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+          branch: main
           force: true
-          commit_message: "chore: Snake animation update"
-          follow_symbolic_links: true
