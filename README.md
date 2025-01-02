@@ -1,4 +1,4 @@
-![Snake](dist/github-snake.svg)
+![Snake](dist/github-snake-dark.svg)
 
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs?username=sdfgsdfgd&layout=compact&theme=gruvbox&show_icons) 
 ![General Stats](https://github-readme-stats.vercel.app/api?username=sdfgsdfgd&show_icons=true&theme=gruvbox)
