@@ -1,5 +1,8 @@
 name: Generate da Snake
 
+permissions:
+  contents: write
+  
 on:
   schedule: 
     - cron: "0 0 * * *"  # run once a day every day forever and ever 
