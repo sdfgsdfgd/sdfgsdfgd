@@ -4,8 +4,7 @@
   <img alt="github-snake" src="dist/github-snake.svg" />
 </picture>
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs?username=sdfgsdfgd&layout=compact&theme=gruvbox&show_icons) 
-![General Stats](https://github-readme-stats.vercel.app/api?username=sdfgsdfgd&show_icons=true&theme=gruvbox)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs?username=sdfgsdfgd&layout=compact&theme=gruvbox&show_icons)
 
 
 <!--
